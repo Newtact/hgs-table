@@ -10,7 +10,14 @@
     <div class="container">
       <div class="products-header">
         <div class="products-all">
-          <h1 class="products-all__title">Browse All Products</h1>
+          <div class="tab-container">
+            <button class="tab-btn active" data-id="all-products">All Products</button>
+            <button class="tab-btn" data-id="organic">Organic</button>
+            <button class="tab-btn" data-id="exotic">Exotic</button>
+            <button class="tab-btn" data-id="micro">Micro Greens</button>
+          </div>
+          <div class="browse-products active" id="all-products">            
+          
           <div class="products-all__items">
             <div class="product-item__image">Image</div>
             <div class="product-item__name">Name</div>
@@ -24,11 +31,23 @@
               <img class="item-image" src="./images/apple.png" alt="apple" />
             </div>
             <div class="product-item__name">Apple</div>
-            <div class="product-item__options">1kg for 220</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
             <div class="product-item__price">220</div>
-            <div class="product-item__qty">1</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
             <div class="product-item__addremove">
-              <button>Add</button>
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
             </div>
           </div>
           <div class="products-all__items">
@@ -36,11 +55,23 @@
               <img class="item-image" src="./images/guava.jpg" alt="Guava" />
             </div>
             <div class="product-item__name">Guava</div>
-            <div class="product-item__options">1kg for 80</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
             <div class="product-item__price">80</div>
-            <div class="product-item__qty">1</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
             <div class="product-item__addremove">
-              <button>Add</button>
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
             </div>
           </div>
           <div class="products-all__items">
@@ -48,13 +79,283 @@
               <img class="item-image" src="./images/orange.jpg" alt="Orange" />
             </div>
             <div class="product-item__name">Otange</div>
-            <div class="product-item__options">6 No's for 120</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
             <div class="product-item__price">120</div>
-            <div class="product-item__qty">1 pkt</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
             <div class="product-item__addremove">
-              <button>Add</button>
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
             </div>
           </div>
+
+        </div>
+
+        <div class="browse-products" id="organic">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">Organic Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="browse-products" id="exotic">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">Exotic Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="browse-products" id="micro">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">MG Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div>
+
         </div>
       </div>
     </div>
